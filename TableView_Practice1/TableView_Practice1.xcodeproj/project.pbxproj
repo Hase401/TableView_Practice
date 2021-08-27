@@ -18,7 +18,7 @@
 		BAD990D326D3B98A0049EAB1 /* FirstMyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAD990D226D3B98A0049EAB1 /* FirstMyPage.storyboard */; };
 		BAD990D526D3BA910049EAB1 /* MyDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD990D426D3BA910049EAB1 /* MyDataViewController.swift */; };
 		BAD990D726D3BADC0049EAB1 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD990D626D3BADC0049EAB1 /* MyPageViewController.swift */; };
-		BAD990D926D7B1CC0049EAB1 /* Days.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD990D826D7B1CB0049EAB1 /* Days.swift */; };
+		BAD990D926D7B1CC0049EAB1 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD990D826D7B1CB0049EAB1 /* Date.swift */; };
 		BAD990DB26D86AD10049EAB1 /* UIColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD990DA26D86AD10049EAB1 /* UIColorHex.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,7 +36,7 @@
 		BAD990D226D3B98A0049EAB1 /* FirstMyPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FirstMyPage.storyboard; sourceTree = "<group>"; };
 		BAD990D426D3BA910049EAB1 /* MyDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDataViewController.swift; sourceTree = "<group>"; };
 		BAD990D626D3BADC0049EAB1 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
-		BAD990D826D7B1CB0049EAB1 /* Days.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Days.swift; sourceTree = "<group>"; };
+		BAD990D826D7B1CB0049EAB1 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		BAD990DA26D86AD10049EAB1 /* UIColorHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorHex.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,7 +97,7 @@
 		BAD990C526D3B1490049EAB1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				BAD990D826D7B1CB0049EAB1 /* Days.swift */,
+				BAD990D826D7B1CB0049EAB1 /* Date.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -216,7 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAD990D926D7B1CC0049EAB1 /* Days.swift in Sources */,
+				BAD990D926D7B1CC0049EAB1 /* Date.swift in Sources */,
 				BAD990CA26D3B23A0049EAB1 /* TabBarController.swift in Sources */,
 				BAD990DB26D86AD10049EAB1 /* UIColorHex.swift in Sources */,
 				BAD990D726D3BADC0049EAB1 /* MyPageViewController.swift in Sources */,

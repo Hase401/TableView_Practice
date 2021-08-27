@@ -20,7 +20,7 @@ final class RecordViewController: UIViewController, UIPickerViewDelegate, UIPick
         self.navigationController?.navigationBar.barTintColor = .red
         self.navigationItem.title = "記録する"
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.largeTitleDisplayMode = .always
+//        navigationItem.largeTitleDisplayMode = .always
         let rightButton = UIBarButtonItem(title: "編集",
                                           style: .done,
                                           target: self,
