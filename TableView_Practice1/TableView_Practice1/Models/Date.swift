@@ -10,5 +10,5 @@ import Foundation
 struct Date {
     var year: Int
     var month: Int
-//    var day: Int
+//    var day: Int? // 【推測】nilにすることでイニシャライザに含まなくてもよい！？
 }
