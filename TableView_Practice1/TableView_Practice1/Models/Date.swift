@@ -12,21 +12,3 @@ struct Date {
     var month: Int
 //    var day: Int
 }
-
-//struct Year {
-//    var year: Int
-//}
-//
-//struct Month {
-//    var month: Int
-//}
-//
-//struct Day {
-//    var day: Int
-//}
-//
-//struct Date {
-//    var year: Year
-//    var month: Month
-//    var day: Day
-//}
