@@ -23,6 +23,8 @@
 		BAF59EE826D92FA50064A91A /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF59EE726D92FA50064A91A /* SectionHeaderView.swift */; };
 		BAF59EEA26D931590064A91A /* SectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAF59EE926D931590064A91A /* SectionHeaderView.xib */; };
 		BAF59EEC26D9BB6B0064A91A /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF59EEB26D9BB6B0064A91A /* SectionHeader.swift */; };
+		BAF59EF026D9F40A0064A91A /* FolderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF59EEE26D9F40A0064A91A /* FolderTableViewCell.swift */; };
+		BAF59EF126D9F40A0064A91A /* FolderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAF59EEF26D9F40A0064A91A /* FolderTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		BAF59EE726D92FA50064A91A /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		BAF59EE926D931590064A91A /* SectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionHeaderView.xib; sourceTree = "<group>"; };
 		BAF59EEB26D9BB6B0064A91A /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
+		BAF59EEE26D9F40A0064A91A /* FolderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderTableViewCell.swift; sourceTree = "<group>"; };
+		BAF59EEF26D9F40A0064A91A /* FolderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FolderTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +167,7 @@
 		BAF59EE526D92CE80064A91A /* Xib */ = {
 			isa = PBXGroup;
 			children = (
+				BAF59EED26D9F3D80064A91A /* FolderTableViewCell */,
 				BAF59EE626D92D090064A91A /* SectionHeaderView */,
 			);
 			path = Xib;
@@ -175,6 +180,15 @@
 				BAF59EE926D931590064A91A /* SectionHeaderView.xib */,
 			);
 			path = SectionHeaderView;
+			sourceTree = "<group>";
+		};
+		BAF59EED26D9F3D80064A91A /* FolderTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				BAF59EEE26D9F40A0064A91A /* FolderTableViewCell.swift */,
+				BAF59EEF26D9F40A0064A91A /* FolderTableViewCell.xib */,
+			);
+			path = FolderTableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,6 +250,7 @@
 			files = (
 				BAD990BD26D3AC0F0049EAB1 /* LaunchScreen.storyboard in Resources */,
 				BAF59EEA26D931590064A91A /* SectionHeaderView.xib in Resources */,
+				BAF59EF126D9F40A0064A91A /* FolderTableViewCell.xib in Resources */,
 				BAD990D326D3B98A0049EAB1 /* FirstMyPage.storyboard in Resources */,
 				BAD990D126D3B9740049EAB1 /* FirstMyData.storyboard in Resources */,
 				BAD990CF26D3B94E0049EAB1 /* FirstRecord.storyboard in Resources */,
@@ -258,6 +273,7 @@
 				BAF59EE826D92FA50064A91A /* SectionHeaderView.swift in Sources */,
 				BAD990B526D3AC070049EAB1 /* RecordViewController.swift in Sources */,
 				BAD990B126D3AC070049EAB1 /* AppDelegate.swift in Sources */,
+				BAF59EF026D9F40A0064A91A /* FolderTableViewCell.swift in Sources */,
 				BAD990B326D3AC070049EAB1 /* SceneDelegate.swift in Sources */,
 				BAD990D526D3BA910049EAB1 /* MyDataViewController.swift in Sources */,
 			);

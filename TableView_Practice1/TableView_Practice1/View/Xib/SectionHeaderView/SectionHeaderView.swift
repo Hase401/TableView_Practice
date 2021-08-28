@@ -17,7 +17,7 @@ class SectionHeaderView: UITableViewHeaderFooterView {
     // 削除
 //    var sectionHeaders: [SectionHeader]!
 //    var sectionNumber: Int?
-    var showCellButtonHandler: () -> Void = {}
+//    var showCellButtonHandler: () -> Void = {}
 //    var showCellButtonHandler: (Bool) -> Void = { _ in }
 
     @IBOutlet private weak var yearLabel: UILabel!
@@ -48,7 +48,8 @@ class SectionHeaderView: UITableViewHeaderFooterView {
 
     // imageViewがprivateなのでSectionHeaderViewからアクセスするメソッドを作る
     func rotateImageView(sectionHeader: SectionHeader) {
-        UIView.animate(withDuration: 1) {
+        // animationが働いていない
+        UIView.animate(withDuration: 10) {
             // 初期値はtrueで下向きであるべき
             if sectionHeader.isCellShowed {
                 self.imageView.transform = CGAffineTransform(rotationAngle: .pi)

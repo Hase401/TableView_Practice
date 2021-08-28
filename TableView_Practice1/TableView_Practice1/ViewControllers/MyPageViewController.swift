@@ -70,6 +70,7 @@ final class MyPageViewController: UIViewController, UIPickerViewDelegate, UIPick
     private func setupTableView() {
         tableView.register(SectionHeaderView.nib(),
                            forHeaderFooterViewReuseIdentifier: SectionHeaderView.identifier)
+        tableView.register(FolderTableViewCell.nib(), forCellReuseIdentifier: FolderTableViewCell.identifier)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
@@ -264,9 +265,13 @@ extension MyPageViewController: UITableViewDataSource {
             }
         }
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = "\(array[indexPath.row].year)"+"."+"\(array[indexPath.row].month)"
-        return cell
+        guard let folderCell = tableView.dequeueReusableCell(withIdentifier: FolderTableViewCell.identifier, for: indexPath) as? FolderTableViewCell else {
+            fatalError("FolderTableViewCellが返ってきてません")
+        }
+        folderCell.configure(date: array[indexPath.row])
+        // 削除
+//        cell.textLabel?.text = "\(array[indexPath.row].year)"+"."+"\(array[indexPath.row].month)"
+        return folderCell
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
