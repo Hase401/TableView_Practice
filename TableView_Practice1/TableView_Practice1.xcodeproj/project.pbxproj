@@ -20,6 +20,9 @@
 		BAD990D726D3BADC0049EAB1 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD990D626D3BADC0049EAB1 /* MyPageViewController.swift */; };
 		BAD990D926D7B1CC0049EAB1 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD990D826D7B1CB0049EAB1 /* Date.swift */; };
 		BAD990DB26D86AD10049EAB1 /* UIColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD990DA26D86AD10049EAB1 /* UIColorHex.swift */; };
+		BAF59EE826D92FA50064A91A /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF59EE726D92FA50064A91A /* SectionHeaderView.swift */; };
+		BAF59EEA26D931590064A91A /* SectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAF59EE926D931590064A91A /* SectionHeaderView.xib */; };
+		BAF59EEC26D9BB6B0064A91A /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF59EEB26D9BB6B0064A91A /* SectionHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		BAD990D626D3BADC0049EAB1 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		BAD990D826D7B1CB0049EAB1 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		BAD990DA26D86AD10049EAB1 /* UIColorHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorHex.swift; sourceTree = "<group>"; };
+		BAF59EE726D92FA50064A91A /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
+		BAF59EE926D931590064A91A /* SectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionHeaderView.xib; sourceTree = "<group>"; };
+		BAF59EEB26D9BB6B0064A91A /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,13 +76,12 @@
 		BAD990AF26D3AC070049EAB1 /* TableView_Practice1 */ = {
 			isa = PBXGroup;
 			children = (
+				BAD990B226D3AC070049EAB1 /* SceneDelegate.swift */,
+				BAD990B026D3AC070049EAB1 /* AppDelegate.swift */,
 				BAD990DC26D888BC0049EAB1 /* Extension */,
 				BAD990C526D3B1490049EAB1 /* Models */,
+				BAF59EE426D92CAC0064A91A /* View */,
 				BAD990C426D3B1370049EAB1 /* ViewControllers */,
-				BAD990C626D3B1A30049EAB1 /* Storyboard */,
-				BAD990B026D3AC070049EAB1 /* AppDelegate.swift */,
-				BAD990B226D3AC070049EAB1 /* SceneDelegate.swift */,
-				BAD990B926D3AC0F0049EAB1 /* Assets.xcassets */,
 				BAD990BB26D3AC0F0049EAB1 /* LaunchScreen.storyboard */,
 				BAD990BE26D3AC0F0049EAB1 /* Info.plist */,
 			);
@@ -98,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				BAD990D826D7B1CB0049EAB1 /* Date.swift */,
+				BAF59EEB26D9BB6B0064A91A /* SectionHeader.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -142,6 +148,33 @@
 				BAD990DA26D86AD10049EAB1 /* UIColorHex.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		BAF59EE426D92CAC0064A91A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BAD990B926D3AC0F0049EAB1 /* Assets.xcassets */,
+				BAD990C626D3B1A30049EAB1 /* Storyboard */,
+				BAF59EE526D92CE80064A91A /* Xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BAF59EE526D92CE80064A91A /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				BAF59EE626D92D090064A91A /* SectionHeaderView */,
+			);
+			path = Xib;
+			sourceTree = "<group>";
+		};
+		BAF59EE626D92D090064A91A /* SectionHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				BAF59EE726D92FA50064A91A /* SectionHeaderView.swift */,
+				BAF59EE926D931590064A91A /* SectionHeaderView.xib */,
+			);
+			path = SectionHeaderView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAD990BD26D3AC0F0049EAB1 /* LaunchScreen.storyboard in Resources */,
+				BAF59EEA26D931590064A91A /* SectionHeaderView.xib in Resources */,
 				BAD990D326D3B98A0049EAB1 /* FirstMyPage.storyboard in Resources */,
 				BAD990D126D3B9740049EAB1 /* FirstMyData.storyboard in Resources */,
 				BAD990CF26D3B94E0049EAB1 /* FirstRecord.storyboard in Resources */,
@@ -218,8 +252,10 @@
 			files = (
 				BAD990D926D7B1CC0049EAB1 /* Date.swift in Sources */,
 				BAD990CA26D3B23A0049EAB1 /* TabBarController.swift in Sources */,
+				BAF59EEC26D9BB6B0064A91A /* SectionHeader.swift in Sources */,
 				BAD990DB26D86AD10049EAB1 /* UIColorHex.swift in Sources */,
 				BAD990D726D3BADC0049EAB1 /* MyPageViewController.swift in Sources */,
+				BAF59EE826D92FA50064A91A /* SectionHeaderView.swift in Sources */,
 				BAD990B526D3AC070049EAB1 /* RecordViewController.swift in Sources */,
 				BAD990B126D3AC070049EAB1 /* AppDelegate.swift in Sources */,
 				BAD990B326D3AC070049EAB1 /* SceneDelegate.swift in Sources */,

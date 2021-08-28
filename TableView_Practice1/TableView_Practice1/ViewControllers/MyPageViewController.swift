@@ -12,24 +12,19 @@ final class MyPageViewController: UIViewController, UIPickerViewDelegate, UIPick
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var semiBoldButton: UIButton!
 
-    // 本来はstructでModelとして管理するべき
-//    var year = "2021" // 初期値インストール日を代入する？
-//    var month = "1" // 初期値インストール日を代入する？
     var yearArray = [Int]() // Int型のままPickerViewできる
     var monthArray = [Int]() // Int型のままPickerViewできる
+        // 削除
     //    var urudosi = [Bool]()
     var urudosi = [Int:Bool]() // 閏年かどうかを格納する配列（年に対応）
     var componentFiles: [[Int]] = [] // 変更
+    // 【保留】
 //    let dayName = ["日", "月", "火", "水", "木", "金", "土"] // 曜日の配列
 //    let days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31] // 各月の日数
 
-    // アプリ全体のSectionを管理
-    var yearFiles: [Int] = [] // sectionTitleに使う // Intに変更
-//    // アプリ全体のフォルダを管理
-//    var files: [String] = [] // 実際のtableViewで使う配列→Sectionごとの配列に変更したい // 辞書は順番としてSortできなそう
-//    // アプリ全体のファイルを管理
-//    var file: [String] = []
-    // 【結論】section/folder/fileを1つの配列として実現したい→structかな？
+    // 削除
+//    var yearFiles: [Int] = [] // sectionTitleに使う // Intに変更
+    var yearFile: [SectionHeader] = [] // staticを使う？
     var dateArray: [Date] = []
 
     override func viewDidLoad() {
@@ -69,19 +64,18 @@ final class MyPageViewController: UIViewController, UIPickerViewDelegate, UIPick
         for i in 1...12 {
             monthArray.append(i)
         }
-//        print("yearArray: ", yearArray)
-//        print("monthArray: ", monthArray)
-        print("urudosi: ", urudosi)
-//        print(urudosi[2100]) // false
         componentFiles = [yearArray, monthArray]
     }
 
     private func setupTableView() {
+        tableView.register(SectionHeaderView.nib(),
+                           forHeaderFooterViewReuseIdentifier: SectionHeaderView.identifier)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
-        yearFiles = [2020, 2021]
-        yearFiles.sort {$0 > $1}
+        yearFile = [SectionHeader(year: 2020, isCellShowed: true),
+                    SectionHeader(year: 2021, isCellShowed: true)]
+        yearFile.sort {$0.year > $1.year}
         dateArray = [
             Date(year: 2021, month: 5),
             Date(year: 2021, month: 4),
@@ -92,7 +86,6 @@ final class MyPageViewController: UIViewController, UIPickerViewDelegate, UIPick
             Date(year: 2020, month: 11),
             Date(year: 2020, month: 10)
         ]
-//        files = ["2021.8", "2021.7", "2021.6", "2021.5", "2021.4", "2021.3", "2021.2", "2020.12", "2020.11", "2020.10", "2020.9"]
     }
 
     private func setupButton() {
@@ -139,7 +132,7 @@ final class MyPageViewController: UIViewController, UIPickerViewDelegate, UIPick
         pickerView.delegate = self
         pickerView.dataSource = self
         actionSheet.view.addSubview(pickerView)
-        // cellに追加する（tableView.reloadData か configureメソッドを作る）
+
         let ok = UIAlertAction(title: "OK",
                                style: UIAlertAction.Style.default,
                                handler: { (action: UIAlertAction!) in
@@ -147,14 +140,15 @@ final class MyPageViewController: UIViewController, UIPickerViewDelegate, UIPick
                                 let year = self.yearArray[pickerView.selectedRow(inComponent: 0)]
                                 let month = self.monthArray[pickerView.selectedRow(inComponent: 1)]
                                 var isYearCommon: Bool = false
-                                for i in 0...self.yearFiles.count-1 {
-                                    if year == self.yearFiles[i] {
+                                for i in 0...self.yearFile.count-1 {
+                                    if year == self.yearFile[i].year {
                                         isYearCommon = true
                                     }
                                 }
                                 if !isYearCommon {
-                                    self.yearFiles.append(year)
-                                    self.yearFiles.sort {$0 > $1} // 降順
+                                    let newSection = SectionHeader(year: year, isCellShowed: true)
+                                    self.yearFile.append(newSection)
+                                    self.yearFile.sort {$0.year > $1.year} // 降順
                                 }
                                 var isMonthCommon: Bool = false
                                 for i in 0...self.dateArray.count-1 {
@@ -164,9 +158,7 @@ final class MyPageViewController: UIViewController, UIPickerViewDelegate, UIPick
                                 }
                                 if !isMonthCommon {
                                     self.dateArray.append(Date(year: year,month: month))
-//                                    self.dateArray.sort {$0.year > $1.year}
                                     self.dateArray.sort {$0.month > $1.month}
-
                                 }
                                 self.tableView.reloadData()
                                })
@@ -177,9 +169,7 @@ final class MyPageViewController: UIViewController, UIPickerViewDelegate, UIPick
                                   })
         actionSheet.addAction(ok)
         actionSheet.addAction(close)
-        self.present(actionSheet, animated: true) {
-
-        }
+        self.present(actionSheet, animated: true)
     }
 
     // pickerViewで必須
@@ -200,26 +190,76 @@ final class MyPageViewController: UIViewController, UIPickerViewDelegate, UIPick
 }
 
 extension MyPageViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        50
+    }
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let sectionHeaderView = tableView.dequeueReusableHeaderFooterView(withIdentifier: SectionHeaderView.identifier) as? SectionHeaderView else {
+            fatalError("sectionHeaderViewが返ってきてません")
+        }
+        // 【パターン①】❌
+//        sectionHeaderView.sectionNumber = section
+//        sectionHeaderView.configure(sectionHeader: Self.yearFile[section], showCellButton: { [weak self] in
+//            guard let strongSelf = self else { return }
+//            strongSelf.tableView.beginUpdates()
+//            let animation = Self.yearFile[section].isCellShowed ?
+//                UITableView.RowAnimation.bottom : UITableView.RowAnimation.top
+//            strongSelf.tableView.reloadRows(at: [], with: animation)
+//            strongSelf.tableView.endUpdates()
+//        })
+        // 【パターン②】❌
+//        sectionHeaderView.configure(sectionHeader: yearFile[section], showCellButton: { [weak self] in
+//            guard let strongSelf = self else { return }
+//            strongSelf.tableView.beginUpdates()
+//            print($0)
+//            let animation = $0 ? UITableView.RowAnimation.bottom : UITableView.RowAnimation.top
+//            strongSelf.tableView.reloadRows(at: [], with: animation)
+////            strongSelf.tableView.reloadSections([section], with: .automatic)
+//            strongSelf.tableView.endUpdates()
+//        })
+        // 【パターン③】🔺
+        sectionHeaderView.configure(sectionHeader: yearFile[section])
+        sectionHeaderView.rotateImageView(sectionHeader: yearFile[section])
+        let gesture = UITapGestureRecognizer(target: self,
+                                             action: #selector(headerTapped(sender:)))
+        sectionHeaderView.addGestureRecognizer(gesture)
+        sectionHeaderView.tag = section
+        return sectionHeaderView
+    }
+
+    @objc func headerTapped(sender: UITapGestureRecognizer) {
+        // tagを持っていない場合は、return
+        guard let section = sender.view?.tag else {
+            return
+        }
+        yearFile[section].isCellShowed.toggle()
+        tableView.beginUpdates()
+        tableView.reloadSections([section], with: .fade)
+        tableView.endUpdates()
+    }
 
 }
 
 extension MyPageViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        files.count
-
-        var count: Int = 0
-        for i in 0...dateArray.count-1 {
-            if yearFiles[section] == dateArray[i].year {
-                count += 1
+        if yearFile[section].isCellShowed {
+            var count: Int = 0
+            for i in 0...dateArray.count-1 {
+                if yearFile[section].year == dateArray[i].year {
+                    count += 1
+                }
             }
+            return count
+        } else {
+            return 0
         }
-        return count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var array: [Date] = []
         for i in 0...dateArray.count-1 {
-            if yearFiles[indexPath.section] == dateArray[i].year {
+            if yearFile[indexPath.section].year == dateArray[i].year {
                 array.append(dateArray[i])
             }
         }
@@ -230,10 +270,12 @@ extension MyPageViewController: UITableViewDataSource {
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        yearFiles.count
+        yearFile.count
     }
 
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        String(yearFiles[section]) // String変に更
-    }
+    // 削除
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        String(yearFiles[section]) // Stringに変更
+//    }
+
 }
