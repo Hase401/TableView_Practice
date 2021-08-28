@@ -31,9 +31,10 @@ final class MyPageViewController: UIViewController, UIPickerViewDelegate, UIPick
         super.viewDidLoad()
 
         view.backgroundColor = .systemGray6
-        self.navigationController?.navigationBar.barTintColor = UIColor(hex: "4169E1")
+        self.navigationController?.navigationBar.barTintColor = .systemGray6
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationItem.largeTitleDisplayMode = .always
         self.navigationItem.title = "記録する"
-        navigationController?.navigationBar.prefersLargeTitles = true
 
         setupArray()
         setupTableView()
@@ -74,6 +75,7 @@ final class MyPageViewController: UIViewController, UIPickerViewDelegate, UIPick
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
+        tableView.backgroundColor = .systemGray6
         yearFile = [SectionHeader(year: 2020, isCellShowed: true),
                     SectionHeader(year: 2021, isCellShowed: true)]
         yearFile.sort {$0.year > $1.year}
@@ -87,6 +89,7 @@ final class MyPageViewController: UIViewController, UIPickerViewDelegate, UIPick
             Date(year: 2020, month: 11),
             Date(year: 2020, month: 10)
         ]
+        dateArray.sort {$0.year > $1.year}
     }
 
     private func setupButton() {
@@ -238,6 +241,19 @@ extension MyPageViewController: UITableViewDelegate {
         tableView.beginUpdates()
         tableView.reloadSections([section], with: .fade)
         tableView.endUpdates()
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // 【問題】ここの配列が上手くできていない　// 配列の中に配列を用意する感じにする？
+        var array: [Date] = []
+        for i in 0...dateArray.count-1 {
+            if yearFile[indexPath.section].year == dateArray[i].year {
+                array.append(dateArray[i])
+            }
+        }
+//        let date = dateArray[indexPath.row]
+        let fileVC = FileViewController.instantiate(sectionDate: array[indexPath.row])
+        self.navigationController?.pushViewController(fileVC, animated: true)
     }
 
 }

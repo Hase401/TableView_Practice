@@ -1,5 +1,5 @@
 //
-//  FoloerTableViewCell.swift
+//  FileTableViewCell.swift
 //  TableView_Practice1
 //
 //  Created by 長谷川孝太 on 2021/08/28.
@@ -7,21 +7,16 @@
 
 import UIKit
 
-//protocol PushFolderTableViewCellDelegate: AnyObject {
-//    func pushCellTapped()
-//}
+class FileTableViewCell: UITableViewCell {
 
-class FolderTableViewCell: UITableViewCell {
-
-    static let identifier = "FolderTableViewCell"
+    static let identifier = "FileTableViewCell"
     static func nib() -> UINib {
-        UINib(nibName: "FolderTableViewCell", bundle: nil)
+        UINib(nibName: "FileTableViewCell", bundle: nil)
     }
 
     @IBOutlet private weak var iconImageView: UIImageView!
-    @IBOutlet private weak var yearMonthLabel: UILabel!
+    @IBOutlet private weak var dateLabel: UILabel!
 
-//    weak var delegate: PushFolderTableViewCellDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -38,11 +33,11 @@ class FolderTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         iconImageView = nil
-        yearMonthLabel.text = nil
+        dateLabel.text = nil
     }
 
-    func configure(date: Date) {
-        yearMonthLabel.text = String(date.year)+"年"+String(date.month)+"月"
+    func configure(today: Today) {
+        dateLabel.text = String(today.month)+"/"+String(today.day)+" (\(today.week.name))"
     }
     
 }
