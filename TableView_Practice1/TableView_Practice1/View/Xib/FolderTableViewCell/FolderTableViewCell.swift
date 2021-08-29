@@ -37,7 +37,7 @@ class FolderTableViewCell: UITableViewCell {
 
     override func prepareForReuse() {
         super.prepareForReuse()
-        iconImageView = nil
+//        iconImageView = nil
         yearMonthLabel.text = nil
     }
 

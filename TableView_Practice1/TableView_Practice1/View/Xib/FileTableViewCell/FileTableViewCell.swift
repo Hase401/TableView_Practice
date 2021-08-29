@@ -32,7 +32,7 @@ class FileTableViewCell: UITableViewCell {
 
     override func prepareForReuse() {
         super.prepareForReuse()
-        iconImageView = nil
+//        iconImageView = nil
         dateLabel.text = nil
     }
 

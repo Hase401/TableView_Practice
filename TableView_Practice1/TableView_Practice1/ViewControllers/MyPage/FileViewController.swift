@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FileViewController: UIViewController {
+final class FileViewController: UIViewController {
     
     @IBOutlet private weak var tableView: UITableView!
 
