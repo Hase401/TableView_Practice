@@ -79,7 +79,9 @@ final class MyDataViewController: UIViewController {
     }
 
     @objc func didTapFixButton(_ sender: UIButton) {
-        print("DidTapFixButton")
+        let mySwitcherVC = MySwitcherViewController.instantiate()
+        let nc = UINavigationController(rootViewController: mySwitcherVC)
+        self.present(nc, animated: true, completion: nil)
     }
 
     @IBAction func presentAlertTapped(_ sender: Any) {

@@ -31,6 +31,16 @@
 		BAF59EFB26DA058A0064A91A /* FileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAF59EF926DA058A0064A91A /* FileTableViewCell.xib */; };
 		BAF59EFD26DA26F70064A91A /* Today.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF59EFC26DA26F60064A91A /* Today.swift */; };
 		BAF59EFF26DA37390064A91A /* WeekDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF59EFE26DA37380064A91A /* WeekDay.swift */; };
+		BAF59F9126DBE22C0064A91A /* SecondMyData.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAF59F9026DBE22C0064A91A /* SecondMyData.storyboard */; };
+		BAF59F9326DBE9ED0064A91A /* UIView+Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF59F9226DBE9ED0064A91A /* UIView+Constraint.swift */; };
+		BAF59F9526DBEA1D0064A91A /* MySwitcherConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF59F9426DBEA1D0064A91A /* MySwitcherConfig.swift */; };
+		BAF59F9826DBEA580064A91A /* MySwitcherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF59F9726DBEA580064A91A /* MySwitcherView.swift */; };
+		BAF59F9A26DBEA890064A91A /* MySwticherContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF59F9926DBEA890064A91A /* MySwticherContentView.swift */; };
+		BAF59F9C26DBEAB90064A91A /* MySwitcherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF59F9B26DBEAB80064A91A /* MySwitcherViewController.swift */; };
+		BAF59F9E26DBEB570064A91A /* MySwitcherViewController+setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF59F9D26DBEB570064A91A /* MySwitcherViewController+setup.swift */; };
+		BAF59FA026DBEB6B0064A91A /* MySwitcherViewController+delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF59F9F26DBEB6B0064A91A /* MySwitcherViewController+delegate.swift */; };
+		BAF59FA226DBEB950064A91A /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF59FA126DBEB950064A91A /* ContentViewController.swift */; };
+		BAF59FA426DBEBB00064A91A /* ContentViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAF59FA326DBEBB00064A91A /* ContentViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +70,16 @@
 		BAF59EF926DA058A0064A91A /* FileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FileTableViewCell.xib; sourceTree = "<group>"; };
 		BAF59EFC26DA26F60064A91A /* Today.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Today.swift; sourceTree = "<group>"; };
 		BAF59EFE26DA37380064A91A /* WeekDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDay.swift; sourceTree = "<group>"; };
+		BAF59F9026DBE22C0064A91A /* SecondMyData.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SecondMyData.storyboard; sourceTree = "<group>"; };
+		BAF59F9226DBE9ED0064A91A /* UIView+Constraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraint.swift"; sourceTree = "<group>"; };
+		BAF59F9426DBEA1D0064A91A /* MySwitcherConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySwitcherConfig.swift; sourceTree = "<group>"; };
+		BAF59F9726DBEA580064A91A /* MySwitcherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySwitcherView.swift; sourceTree = "<group>"; };
+		BAF59F9926DBEA890064A91A /* MySwticherContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySwticherContentView.swift; sourceTree = "<group>"; };
+		BAF59F9B26DBEAB80064A91A /* MySwitcherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySwitcherViewController.swift; sourceTree = "<group>"; };
+		BAF59F9D26DBEB570064A91A /* MySwitcherViewController+setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MySwitcherViewController+setup.swift"; sourceTree = "<group>"; };
+		BAF59F9F26DBEB6B0064A91A /* MySwitcherViewController+delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MySwitcherViewController+delegate.swift"; sourceTree = "<group>"; };
+		BAF59FA126DBEB950064A91A /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
+		BAF59FA326DBEBB00064A91A /* ContentViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ContentViewController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +129,7 @@
 			children = (
 				BAD990C926D3B23A0049EAB1 /* TabBarController.swift */,
 				BAD990B426D3AC070049EAB1 /* RecordViewController.swift */,
-				BAD990D426D3BA910049EAB1 /* MyDataViewController.swift */,
+				BAF59F8D26DBE1A10064A91A /* MyData */,
 				BAF59EF226D9FEC20064A91A /* MyPage */,
 			);
 			path = ViewControllers;
@@ -122,6 +142,7 @@
 				BAD990D826D7B1CB0049EAB1 /* Date.swift */,
 				BAF59EFE26DA37380064A91A /* WeekDay.swift */,
 				BAF59EFC26DA26F60064A91A /* Today.swift */,
+				BAF59F9426DBEA1D0064A91A /* MySwitcherConfig.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -148,6 +169,8 @@
 			isa = PBXGroup;
 			children = (
 				BAD990D026D3B9740049EAB1 /* FirstMyData.storyboard */,
+				BAF59F9026DBE22C0064A91A /* SecondMyData.storyboard */,
+				BAF59FA326DBEBB00064A91A /* ContentViewController.storyboard */,
 			);
 			path = MyData;
 			sourceTree = "<group>";
@@ -165,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				BAD990DA26D86AD10049EAB1 /* UIColorHex.swift */,
+				BAF59F9226DBE9ED0064A91A /* UIView+Constraint.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -225,6 +249,28 @@
 			path = FileTableViewCell;
 			sourceTree = "<group>";
 		};
+		BAF59F8D26DBE1A10064A91A /* MyData */ = {
+			isa = PBXGroup;
+			children = (
+				BAD990D426D3BA910049EAB1 /* MyDataViewController.swift */,
+				BAF59F9B26DBEAB80064A91A /* MySwitcherViewController.swift */,
+				BAF59F9626DBEA410064A91A /* Switcher */,
+			);
+			path = MyData;
+			sourceTree = "<group>";
+		};
+		BAF59F9626DBEA410064A91A /* Switcher */ = {
+			isa = PBXGroup;
+			children = (
+				BAF59F9726DBEA580064A91A /* MySwitcherView.swift */,
+				BAF59F9926DBEA890064A91A /* MySwticherContentView.swift */,
+				BAF59F9D26DBEB570064A91A /* MySwitcherViewController+setup.swift */,
+				BAF59F9F26DBEB6B0064A91A /* MySwitcherViewController+delegate.swift */,
+				BAF59FA126DBEB950064A91A /* ContentViewController.swift */,
+			);
+			path = Switcher;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -282,8 +328,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAF59FA426DBEBB00064A91A /* ContentViewController.storyboard in Resources */,
 				BAD990BD26D3AC0F0049EAB1 /* LaunchScreen.storyboard in Resources */,
 				BAF59EEA26D931590064A91A /* SectionHeaderView.xib in Resources */,
+				BAF59F9126DBE22C0064A91A /* SecondMyData.storyboard in Resources */,
 				BAF59EF126D9F40A0064A91A /* FolderTableViewCell.xib in Resources */,
 				BAD990D326D3B98A0049EAB1 /* FirstMyPage.storyboard in Resources */,
 				BAD990D126D3B9740049EAB1 /* FirstMyData.storyboard in Resources */,
@@ -303,19 +351,27 @@
 			files = (
 				BAF59EFA26DA058A0064A91A /* FileTableViewCell.swift in Sources */,
 				BAD990D926D7B1CC0049EAB1 /* Date.swift in Sources */,
+				BAF59F9526DBEA1D0064A91A /* MySwitcherConfig.swift in Sources */,
+				BAF59F9826DBEA580064A91A /* MySwitcherView.swift in Sources */,
 				BAD990CA26D3B23A0049EAB1 /* TabBarController.swift in Sources */,
 				BAF59EEC26D9BB6B0064A91A /* SectionHeader.swift in Sources */,
+				BAF59FA026DBEB6B0064A91A /* MySwitcherViewController+delegate.swift in Sources */,
 				BAD990DB26D86AD10049EAB1 /* UIColorHex.swift in Sources */,
 				BAF59EFD26DA26F70064A91A /* Today.swift in Sources */,
+				BAF59F9326DBE9ED0064A91A /* UIView+Constraint.swift in Sources */,
+				BAF59F9C26DBEAB90064A91A /* MySwitcherViewController.swift in Sources */,
 				BAD990D726D3BADC0049EAB1 /* MyPageViewController.swift in Sources */,
 				BAF59EE826D92FA50064A91A /* SectionHeaderView.swift in Sources */,
 				BAF59EF426D9FEEB0064A91A /* FileViewController.swift in Sources */,
 				BAD990B526D3AC070049EAB1 /* RecordViewController.swift in Sources */,
+				BAF59FA226DBEB950064A91A /* ContentViewController.swift in Sources */,
 				BAD990B126D3AC070049EAB1 /* AppDelegate.swift in Sources */,
+				BAF59F9A26DBEA890064A91A /* MySwticherContentView.swift in Sources */,
 				BAF59EF026D9F40A0064A91A /* FolderTableViewCell.swift in Sources */,
 				BAF59EFF26DA37390064A91A /* WeekDay.swift in Sources */,
 				BAD990B326D3AC070049EAB1 /* SceneDelegate.swift in Sources */,
 				BAD990D526D3BA910049EAB1 /* MyDataViewController.swift in Sources */,
+				BAF59F9E26DBEB570064A91A /* MySwitcherViewController+setup.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
