@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		BAD990B126D3AC070049EAB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD990B026D3AC070049EAB1 /* AppDelegate.swift */; };
-		BAD990B326D3AC070049EAB1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD990B226D3AC070049EAB1 /* SceneDelegate.swift */; };
 		BAD990B526D3AC070049EAB1 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD990B426D3AC070049EAB1 /* RecordViewController.swift */; };
 		BAD990BA26D3AC0F0049EAB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAD990B926D3AC0F0049EAB1 /* Assets.xcassets */; };
 		BAD990BD26D3AC0F0049EAB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAD990BB26D3AC0F0049EAB1 /* LaunchScreen.storyboard */; };
@@ -46,7 +45,6 @@
 /* Begin PBXFileReference section */
 		BAD990AD26D3AC070049EAB1 /* TableView_Practice1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableView_Practice1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD990B026D3AC070049EAB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BAD990B226D3AC070049EAB1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		BAD990B426D3AC070049EAB1 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		BAD990B926D3AC0F0049EAB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BAD990BC26D3AC0F0049EAB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -112,7 +110,6 @@
 		BAD990AF26D3AC070049EAB1 /* TableView_Practice1 */ = {
 			isa = PBXGroup;
 			children = (
-				BAD990B226D3AC070049EAB1 /* SceneDelegate.swift */,
 				BAD990B026D3AC070049EAB1 /* AppDelegate.swift */,
 				BAD990DC26D888BC0049EAB1 /* Extension */,
 				BAD990C526D3B1490049EAB1 /* Models */,
@@ -369,7 +366,6 @@
 				BAF59F9A26DBEA890064A91A /* MySwticherContentView.swift in Sources */,
 				BAF59EF026D9F40A0064A91A /* FolderTableViewCell.swift in Sources */,
 				BAF59EFF26DA37390064A91A /* WeekDay.swift in Sources */,
-				BAD990B326D3AC070049EAB1 /* SceneDelegate.swift in Sources */,
 				BAD990D526D3BA910049EAB1 /* MyDataViewController.swift in Sources */,
 				BAF59F9E26DBEB570064A91A /* MySwitcherViewController+setup.swift in Sources */,
 			);
