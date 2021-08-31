@@ -250,7 +250,6 @@
 			isa = PBXGroup;
 			children = (
 				BAD990D426D3BA910049EAB1 /* MyDataViewController.swift */,
-				BAF59F9B26DBEAB80064A91A /* MySwitcherViewController.swift */,
 				BAF59F9626DBEA410064A91A /* Switcher */,
 			);
 			path = MyData;
@@ -261,6 +260,7 @@
 			children = (
 				BAF59F9726DBEA580064A91A /* MySwitcherView.swift */,
 				BAF59F9926DBEA890064A91A /* MySwticherContentView.swift */,
+				BAF59F9B26DBEAB80064A91A /* MySwitcherViewController.swift */,
 				BAF59F9D26DBEB570064A91A /* MySwitcherViewController+setup.swift */,
 				BAF59F9F26DBEB6B0064A91A /* MySwitcherViewController+delegate.swift */,
 				BAF59FA126DBEB950064A91A /* ContentViewController.swift */,

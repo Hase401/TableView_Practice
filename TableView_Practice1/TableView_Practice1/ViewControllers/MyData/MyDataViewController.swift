@@ -35,6 +35,11 @@ final class MyDataViewController: UIViewController {
         setupTableView()
         setupButton()
     }
+    @objc func didTapFixButton(_ sender: UIButton) {
+        let mySwitcherVC = MySwitcherViewController.instantiate()
+        let nc = UINavigationController(rootViewController: mySwitcherVC)
+        self.present(nc, animated: true, completion: nil)
+    }
 
     private func setupTableView() {
         tableView.delegate = self
@@ -76,12 +81,6 @@ final class MyDataViewController: UIViewController {
             fatalError("MyDataViewControllerが見つかりません")
         }
         return vc
-    }
-
-    @objc func didTapFixButton(_ sender: UIButton) {
-        let mySwitcherVC = MySwitcherViewController.instantiate()
-        let nc = UINavigationController(rootViewController: mySwitcherVC)
-        self.present(nc, animated: true, completion: nil)
     }
 
     @IBAction func presentAlertTapped(_ sender: Any) {
