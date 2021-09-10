@@ -91,6 +91,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA1EE2F326E248AF00FB4777 /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				BAD990B426D3AC070049EAB1 /* RecordViewController.swift */,
+			);
+			path = Record;
+			sourceTree = "<group>";
+		};
 		BAD990A426D3AC070049EAB1 = {
 			isa = PBXGroup;
 			children = (
@@ -125,7 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				BAD990C926D3B23A0049EAB1 /* TabBarController.swift */,
-				BAD990B426D3AC070049EAB1 /* RecordViewController.swift */,
+				BA1EE2F326E248AF00FB4777 /* Record */,
 				BAF59F8D26DBE1A10064A91A /* MyData */,
 				BAF59EF226D9FEC20064A91A /* MyPage */,
 			);
